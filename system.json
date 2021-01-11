@@ -1,0 +1,35 @@
+{
+  "name": "l5r4ed",
+  "title": "Legend of the Five Rings - 4th Edition",
+  "description": "System for Legend of the Five Rings (4E).",
+  "version": "0.0.1",
+  "author": "Eupolemo Castro",
+  "scripts": [],
+  "esmodules": ["l5r4ed.js"],
+  "styles": ["l5r4ed.css"],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "l5r4ed-dice-roller",
+      "manifest": "https://github.com/eupolemo/fvtt-l5r4ed-dice-roller/releases/download/latest/module.json"
+    }
+  ],
+  "socket": false,
+  "initiative": "2k1",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "attributes.hp",
+  "secondaryTokenAttribute": "attributes.void",
+  "minimumCoreVersion": "0.7.6",
+  "compatibleCoreVersion": "0.7.9",
+  "url": "https://github.com/eupolemo/fvtt-l5r4ed-dice-roller",
+  "manifest": "https://github.com/eupolemo/fvtt-l5r4ed-system/blob/main/system.json",
+  "download": "https://github.com/eupolemo/fvtt-l5r4ed-system/releases/download/latest/l5r4ed-system.zip"
+}

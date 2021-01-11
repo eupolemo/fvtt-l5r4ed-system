@@ -1,0 +1,44 @@
+{
+  "L5R4ED": {
+    "Rings": {
+      "Title": "Rings",
+      "earth": {
+        "Title": "Earth",
+        "stamina": "Stamina",
+        "willpower": "Willpower"
+      },
+      "air": {
+        "Title": "Air",
+        "reflex": "Reflex",
+        "awareness": "Awareness"
+      },
+      "water": {
+        "Title": "Water",
+        "strength": "Strength",
+        "perception": "Perception"
+      },
+      "fire": {
+        "Title": "Fire",
+        "agility": "Agility",
+        "intelligence": "Intelligence"
+      },
+      "void": {
+        "Title": "Void",
+        "currentVoid": "Current Void",
+        "maxVoid": "Max Void"
+      }
+    },
+    "Narrative": "Narrative",
+    "Experience": "Experience",
+    "Inventory": "Inventory",
+    "Clan": "Clan",
+    "Family": "Family",
+    "School": "School",
+    "SchoolRank": "Rank",
+    "Rank": "Rank",
+    "Insight": "Insight",
+    "Skills": {
+      "Title": "Skills"
+    }
+  }
+}

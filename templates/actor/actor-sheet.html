@@ -1,0 +1,106 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+      <div class="header-rings">
+        <div id="earth">
+          <label class="attribute-label earth centered-input rollable" data-action="rollEarth">{{ localizeRing
+            'earth.Title'
+            }}</label>
+          <input class="centered-input" type="number" name="data.earth.value" value="{{data.earth.value}}"
+            data-dtype="Number" placeholder="0" disabled>
+          <label class="attribute-label earth centered-input">{{ localizeRing 'earth.stamina' }}</label>
+          <input class="centered-input" type="number" name="data.earth.stamina" value="{{data.earth.stamina}}"
+            data-dtype="Number" placeholder="0">
+          <label class="attribute-label earth centered-input">{{ localizeRing 'earth.willpower' }}</label>
+          <input class="centered-input" type="number" name="data.earth.willpower" value="{{data.earth.willpower}}"
+            data-dtype="Number" placeholder="0">
+        </div>
+        <div id="air">
+          <label class="attribute-label air centered-input">{{ localizeRing 'air.Title' }}</label>
+          <input class="centered-input" type="number" name="data.air.value" value="{{data.air.value}}"
+            data-dtype="Number" placeholder="0" disabled>
+          <label class="attribute-label air centered-input">{{ localizeRing 'air.reflex' }}</label>
+          <input class="centered-input" type="number" name="data.air.reflex" value="{{data.air.reflex}}"
+            data-dtype="Number" placeholder="0">
+          <label class="attribute-label air centered-input">{{ localizeRing 'air.awareness' }}</label>
+          <input class="centered-input" type="number" name="data.air.awareness" value="{{data.air.awareness}}"
+            data-dtype="Number" placeholder="0">
+        </div>
+        <div id="water">
+          <label class="attribute-label water centered-input">{{ localizeRing 'water.Title' }}</label>
+          <input class="centered-input" type="number" name="data.water.value" value="{{data.water.value}}"
+            data-dtype="Number" placeholder="0" disabled>
+          <label class="attribute-label water centered-input">{{ localizeRing 'water.perception' }}</label>
+          <input class="centered-input" type="number" name="data.water.perception" value="{{data.water.perception}}"
+            data-dtype="Number" placeholder="0">
+          <label class="attribute-label water centered-input">{{ localizeRing 'water.strength' }}</label>
+          <input class="centered-input" type="number" name="data.water.strength" value="{{data.water.strength}}"
+            data-dtype="Number" placeholder="0">
+        </div>
+        <div id="fire">
+          <label class="attribute-label fire centered-input">{{ localizeRing 'fire.Title' }}</label>
+          <input class="centered-input" type="number" name="data.fire.value" value="{{data.fire.value}}"
+            data-dtype="Number" placeholder="0" disabled>
+          <label class="attribute-label fire centered-input">{{ localizeRing 'fire.agility' }}</label>
+          <input class="centered-input" type="number" name="data.fire.agility" value="{{data.fire.agility}}"
+            data-dtype="Number" placeholder="0">
+          <label class="attribute-label fire centered-input">{{ localizeRing 'fire.intelligence' }}</label>
+          <input class="centered-input" type="number" name="data.fire.intelligence" value="{{data.fire.intelligence}}"
+            data-dtype="Number" placeholder="0">
+        </div>
+        <div id="void">
+          <label class="attribute-label void centered-input">{{ localizeRing 'void.Title' }}</label>
+          <input class="centered-input" type="number" name="data.void.max" value="{{data.void.max}}" data-dtype="Number"
+            placeholder="0">
+          <label class="attribute-label void centered-input">{{ localizeRing 'void.currentVoid' }}</label>
+          <input class="centered-input" type="number" name="data.void.current" value="{{data.void.current}}"
+            data-dtype="Number" placeholder="0">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="narrative"> {{ localize "L5R4ED.Narrative" }}</a>
+    <a class="item" data-tab="skills"> {{ localize "L5R4ED.Skills.Title" }}</a>
+    <a class="item" data-tab="inventory"> {{ localize 'L5R4ED.Inventory' }}</a>
+    <a class="item" data-tab="experience"> {{ localize 'L5R4ED.Experience' }}</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab narrative" data-group="primary" data-tab="narrative">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div class="identity-wrapper">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <div>
+              <label class="attribute-label">{{ localize 'L5R4ED.Clan' }}</label>
+              <input type="text" name="data.identity.clan" value="{{data.identity.clan}}">
+            </div>
+            <div>
+              <label class="attribute-label">{{ localize 'L5R4ED.Family' }}</label>
+              <input type="text" name="data.identity.family" value="{{data.identity.family}}">
+            </div>
+            <div>
+              <label class="attribute-label">{{ localize 'L5R4ED.Insight' }}</label>
+              <input type="text" name="data.identity.insight" value="{{data.identity.insight}}">
+            </div>
+            <div>
+              <label class="attribute-label">{{ localize 'L5R4ED.Rank' }}</label>
+              <input type="text" name="data.identity.rank" value="{{data.identity.rank}}">
+            </div>
+            {{#each data.schools as |school schoolId| }}
+            {{> systems/l5r4ed/templates/actor/school-entry.html school=school}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="narrative-wrapper">
+
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
